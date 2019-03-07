@@ -3,14 +3,14 @@ node {
 
     stage('Clone repository') {
         /* Cloning the Repository to our Workspace */
-        echo "Clone repository"
         checkout scm
+        echo "Clone repository"
     }
 
     stage('Build image') {
         /* This builds the actual image */
-        echo "Build image"
         app = docker.build("puicheng/nodeapp")
+        echo "Build image"
     }
 
     stage('Test image') {
